@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Workload & Resource Nexus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Faculty Workload & Resource Nexus</h1>
+
+        
+        <div class="hero" id="particles-js">
+            <div class="button-group">
+                <button class="modal-btn" data-modal="facultyModal"><i class="fas fa-user"></i> Add Faculty</button>
+                <button class="modal-btn" data-modal="workloadModal"><i class="fas fa-book"></i> Add Workload</button>
+                <button class="modal-btn" data-modal="roomModal"><i class="fas fa-door-open"></i> Allocate Room</button>
+                <button class="modal-btn" data-modal="consumablesModal"><i class="fas fa-box"></i> Request Consumables</button>
+            </div>
+            <div class="decorative-wave"></div>
+            <div class="decorative-dot"></div>
+        </div>
+
+        
+        <div class="modal" id="facultyModal">
+            <div class="modal-content glass-3d">
+                <span class="close-btn">×</span>
+                <h2><i class="fas fa-user-tie"></i> Faculty Management</h2>
+                <form id="facultyForm">
+                    <div class="input-group">
+                        <label for="facultyName">Name <i class="fas fa-signature"></i></label>
+                        <input type="text" id="facultyName" placeholder="Enter Faculty Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email <i class="fas fa-envelope"></i></label>
+                        <input type="email" id="email" placeholder="Enter Email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="contact">Contact <i class="fas fa-phone"></i></label>
+                        <input type="text" id="contact" placeholder="Enter Contact" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="designation">Designation <i class="fas fa-briefcase"></i></label>
+                        <select id="designation" required>
+                            <option value="Lecturer">Lecturer</option>
+                            <option value="Assistant Professor">Assistant Professor</option>
+                            <option value="Associate Professor">Associate Professor</option>
+                            <option value="Professor">Professor</option>
+                        </select>
+                    </div>
+                    <button class="submit-btn" type="submit">Add Faculty <i class="fas fa-plus"></i></button>
+                </form>
+            </div>
+        </div>
+
+       
+        <div class="modal" id="workloadModal">
+            <div class="modal-content glass-3d">
+                <span class="close-btn">×</span>
+                <h2><i class="fas fa-book-open"></i> Workload</h2>
+                <form id="workloadForm">
+                    <div class="input-group">
+                        <label for="courseName">Course Name <i class="fas fa-graduation-cap"></i></label>
+                        <input type="text" id="courseName" placeholder="Enter Course Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="creditHours">Credit Hours <i class="fas fa-clock"></i></label>
+                        <input type="number" id="creditHours" placeholder="Enter Credit Hours" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="contactHours">Contact Hours <i class="fas fa-user-clock"></i></label>
+                        <input type="number" id="contactHours" placeholder="Enter Contact Hours" required>
+                    </div>
+                    <button class="submit-btn" type="submit">Add Workload <i class="fas fa-plus"></i></button>
+                </form>
+            </div>
+        </div>
+
+       
+        <div class="modal" id="roomModal">
+            <div class="modal-content glass-3d">
+                <span class="close-btn">×</span>
+                <h2><i class="fas fa-door-closed"></i> Room Allocation</h2>
+                <form id="roomAllocationForm">
+                    <div class="input-group">
+                        <label for="roomName">Room Name <i class="fas fa-building"></i></label>
+                        <input type="text" id="roomName" placeholder="Enter Room Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="roomType">Room Type <i class="fas fa-cube"></i></label>
+                        <select id="roomType" required>
+                            <option value="Classroom">Classroom</option>
+                            <option value="Lab">Lab</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="capacity">Capacity <i class="fas fa-users"></i></label>
+                        <input type="number" id="capacity" placeholder="Enter Capacity" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="timeSlot">Time Slot <i class="fas fa-calendar-alt"></i></label>
+                        <input type="time" id="timeSlot" required>
+                    </div>
+                    <button class="submit-btn" type="submit">Allocate Room <i class="fas fa-plus"></i></button>
+                </form>
+            </div>
+        </div>
+
+        
+        <div class="modal" id="consumablesModal">
+            <div class="modal-content glass-3d">
+                <span class="close-btn">×</span>
+                <h2><i class="fas fa-box-open"></i> Consumables Request</h2>
+                <form id="consumablesRequestForm">
+                    <div class="input-group">
+                        <label for="itemName">Item Name <i class="fas fa-tools"></i></label>
+                        <select id="itemName" required>
+                            <option value="Marker">Marker</option>
+                            <option value="Whiteboard">Whiteboard</option>
+                            <option value="Laptop">Laptop</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="quantity">Quantity <i class="fas fa-sort-numeric-up"></i></label>
+                        <input type="number" id="quantity" placeholder="Enter Quantity" required>
+                    </div>
+                    <button class="submit-btn" type="submit">Request Consumables <i class="fas fa-plus"></i></button>
+                </form>
+            </div>
+        </div>
+
+       
+        <div class="section data-table">
+            <h2><i class="fas fa-table"></i> Room Allocation Insights</h2>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Faculty Name</th>
+                        <th>Room</th>
+                        <th>Type</th>
+                        <th>Capacity</th>
+                        <th>Time Slot</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+     
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ff6b6b' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ff8e53', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
